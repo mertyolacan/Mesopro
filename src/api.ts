@@ -55,8 +55,9 @@ export const updateUserProfile = (userId: string | number, data: Partial<User>) 
     body: JSON.stringify(data)
   });
 
-// All API calls go to /api (proxied to Express backend by Vite in dev)
-const BASE = '/api';
+// Dev: Vite proxies /api → localhost:3001
+// Prod: VITE_API_URL env variable ile backend URL'i belirt (örn: https://mesopro-api.onrender.com/api)
+const BASE = import.meta.env.VITE_API_URL || '/api';
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const token = localStorage.getItem('mesopro_auth_token');
