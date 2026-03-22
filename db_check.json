@@ -1,0 +1,42 @@
+[
+  {
+    "id": 12,
+    "name": "3 AL 2 ÖDE",
+    "coupon_code": null
+  },
+  {
+    "id": 13,
+    "name": "5 AL 3 ÖDE",
+    "coupon_code": null
+  },
+  {
+    "id": 15,
+    "name": "5 AL 3 ÖDE KAMPANYASI ",
+    "coupon_code": null
+  },
+  {
+    "id": 16,
+    "name": "BAHAR KOPON",
+    "coupon_code": "BAHAR"
+  },
+  {
+    "id": 9,
+    "name": "Sepette %20 İndirim",
+    "coupon_code": null
+  },
+  {
+    "id": 5,
+    "name": "100000 ustu 50.000",
+    "coupon_code": null
+  },
+  {
+    "id": 10,
+    "name": "15.0000₺  Üzerine 3333₺ indirim",
+    "coupon_code": null
+  },
+  {
+    "id": 11,
+    "name": "15 de %15",
+    "coupon_code": null
+  }
+]
