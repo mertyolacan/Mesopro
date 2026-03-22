@@ -56,7 +56,8 @@ export const updateUserProfile = (userId: string | number, data: Partial<User>) 
   });
 
 // Dev: Vite proxies /api → localhost:3001
-// Prod: VITE_API_URL env variable ile backend URL'i belirt (örn: https://mesopro-api.onrender.com/api)
+// Prod (Vercel): aynı domain'de /api route'u server.ts'e yönlendirilir
+// Prod (ayrı backend): VITE_API_URL env variable'ı ile override edilebilir
 const BASE = import.meta.env.VITE_API_URL || '/api';
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {

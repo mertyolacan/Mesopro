@@ -2123,13 +2123,18 @@ Sitemap: ${baseUrl}/sitemap.xml`;
 });
 
 // ── Start ─────────────────────────────────────────────────────────────────────
-initDb().then(() => {
-  app.listen(PORT, () => {
-    console.log(`🚀 MesoPro API server running on http://localhost:${PORT}`);
+// Vercel serverless ortamında listen() çağrılmaz; sadece app export edilir
+if (process.env.VERCEL !== '1') {
+  initDb().then(() => {
+    app.listen(PORT, () => {
+      console.log(`🚀 MesoPro API server running on http://localhost:${PORT}`);
+    });
+  }).catch(err => {
+    console.error('❌ Failed to initialize database:', err);
+    process.exit(1);
   });
-}).catch(err => {
-  console.error('❌ Failed to initialize database:', err);
-  process.exit(1);
-});
+} else {
+  initDb().catch(err => console.error('❌ DB init error:', err));
+}
 
 export default app;
